@@ -18,14 +18,23 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/chat-app",
+            "allowedCommonJsDependencies": [
+              "sockjs-client"
+            ],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": "/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -81,11 +90,17 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "public",
+                "output": "/"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
@@ -97,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

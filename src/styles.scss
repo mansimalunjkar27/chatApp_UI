@@ -1,1 +1,242 @@
-/* You can add global styles to this file, and also import other style files */
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #edf1f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Username Page */
+#username-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.username-page-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+button.accent.username-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #2196f3;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.accent.username-submit:hover {
+  background-color: #1976d2;
+}
+
+/* Chatroom */
+#chatroom {
+  width: 100%;
+  max-width: 720px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.connecting {
+  font-size: 16px;
+  color: #f39c12;
+  text-align: center;
+}
+
+/* Messages */
+#messageArea {
+  flex: 1;
+  list-style: none;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+#messageArea li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#messageArea li.chat-message {
+  flex-direction: row;
+}
+
+#messageArea li.event-message {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  width: 100%;
+  justify-content: center;
+}
+
+#messageArea li i {
+  background-color: #42a5f5;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#messageArea li p {
+  background-color: #f1f3f6;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2c3e50;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* Message Input */
+.message-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-input input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.message-input input[type="text"]:focus {
+  border-color: #2196f3;
+}
+
+.message-input button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.message-input button:hover {
+  background-color: #43a047;
+}
+
+.message-input button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Emoji Trigger Button */
+.message-input button#emojiButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.message-input button#emojiButton:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+/* Emoji Picker Container */
+div[ng-reflect-ng-if="true"] {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #chatroom {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    height: 100vh;
+  }
+
+  .message-input {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .message-input input[type="text"] {
+    font-size: 14px;
+  }
+
+  button.accent.username-submit {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

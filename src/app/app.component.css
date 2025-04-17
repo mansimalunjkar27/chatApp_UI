@@ -1,0 +1,47 @@
+/* Chatroom container */
+#chatroom {
+  width: 100%;
+  max-width: 720px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat container layout */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header stays on top */
+.chat-header {
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+/* Message list becomes scrollable */
+#messageArea {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+/* Chat input area at the bottom */
+.message-input {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
